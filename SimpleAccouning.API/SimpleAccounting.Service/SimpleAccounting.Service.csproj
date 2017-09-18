@@ -45,6 +45,7 @@
     <Compile Include="Common\IEntityService.cs" />
     <Compile Include="Common\IService.cs" />
     <Compile Include="IAccountingCompanyDetailService.cs" />
+    <Compile Include="IAccountingCustomerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -49,17 +49,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountingCompanyDetailRepository.cs" />
-    <Compile Include="AccountingCustomerRepository.cs" />
-    <Compile Include="AccountingOptionRepository.cs" />
-    <Compile Include="GenericRepository.cs" />
-    <Compile Include="IAccountingCompanyDetailRepository.cs" />
-    <Compile Include="IAccountingCustomerRepository.cs" />
-    <Compile Include="IAccountingOptionRepository.cs" />
-    <Compile Include="IGenericRepository.cs" />
-    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Repository\AccountingCompanyDetailRepository.cs" />
+    <Compile Include="Repository\AccountingCustomerRepository.cs" />
+    <Compile Include="Repository\AccountingOptionRepository.cs" />
+    <Compile Include="Repository\AccountingPurchaseInvoiceDetailRepository.cs" />
+    <Compile Include="Repository\AccountingPurchaseInvoiceRepository.cs" />
+    <Compile Include="Repository\AccountingPurchaseOrderDetailRepository.cs" />
+    <Compile Include="Repository\AccountingPurchaseOrderRepository.cs" />
+    <Compile Include="Repository\AccountingSalesInvoiceDetailRepository.cs" />
+    <Compile Include="Repository\AccountingSalesInvoiceRepository.cs" />
+    <Compile Include="Repository\AccountingSalesOrderDetailRepository.cs" />
+    <Compile Include="Repository\AccountingSalesOrderRepository.cs" />
+    <Compile Include="IRepository\IAccountingCompanyDetailRepository.cs" />
+    <Compile Include="IRepository\IAccountingCustomerRepository.cs" />
+    <Compile Include="IRepository\IAccountingOptionRepository.cs" />
+    <Compile Include="IRepository\IAccountingPurchaseInvoiceDetailRepository.cs" />
+    <Compile Include="IRepository\IAccountingPurchaseInvoiceRepository.cs" />
+    <Compile Include="IRepository\IAccountingPurchaseOrderDetailRepository.cs" />
+    <Compile Include="IRepository\IAccountingPurchaseOrderRepository.cs" />
+    <Compile Include="IRepository\IAccountingSalesInvoiceDetailRepository.cs" />
+    <Compile Include="IRepository\IAccountingSalesInvoiceRepository.cs" />
+    <Compile Include="IRepository\IAccountingSalesOrderDetailRepository.cs" />
+    <Compile Include="IRepository\IAccountingSalesOrderRepository.cs" />
+    <Compile Include="Infrastructure\DatabaseFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDatabaseFactory.cs" />
+    <Compile Include="Infrastructure\IRepositoryBase.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201709080453001_praneetthakur.cs" />
+    <Compile Include="Migrations\201709080453001_praneetthakur.Designer.cs">
+      <DependentUpon>201709080453001_praneetthakur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709080720103_praneetthakur_2_for_logo.cs" />
+    <Compile Include="Migrations\201709080720103_praneetthakur_2_for_logo.Designer.cs">
+      <DependentUpon>201709080720103_praneetthakur_2_for_logo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="SimpleAccountingContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleAccounting.Model\SimpleAccounting.Model.csproj">
@@ -71,6 +100,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709080453001_praneetthakur.resx">
+      <DependentUpon>201709080453001_praneetthakur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709080720103_praneetthakur_2_for_logo.resx">
+      <DependentUpon>201709080720103_praneetthakur_2_for_logo.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

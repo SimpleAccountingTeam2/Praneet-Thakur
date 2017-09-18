@@ -1,5 +1,6 @@
 ﻿using SimpleAccounting.Model;
 using SimpleAccounting.Repository;
+using SimpleAccounting.Repository.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,13 @@ namespace SimpleAccounting.Service.Common
     {
 
         IUnitOfWork _unitOfWork;
-        IGenericRepository<T> _repository;
+        IRepositoryBase<T> _repository;
         private IUnitOfWork unitOfWork;
         private IAccountingCompanyDetailRepository countryRepository;
+     //   private IAccountingCustomerService countryRepository1;
+      //  private IAccountingOptionService countryRepository2;
 
-        public EntityService(IUnitOfWork unitOfWork, IGenericRepository<T> repository)
+        public EntityService(IUnitOfWork unitOfWork, IRepositoryBase<T> repository)
         {
             _unitOfWork = unitOfWork;
             _repository = repository;
@@ -27,6 +30,18 @@ namespace SimpleAccounting.Service.Common
             this.unitOfWork = unitOfWork;
             this.countryRepository = countryRepository;
         }
+
+        //public EntityService(IUnitOfWork unitOfWork, IAccountingCustomerService countryRepository1)
+        //{
+        //    this.unitOfWork = unitOfWork;
+        //    this.countryRepository1 = countryRepository1;
+        //}
+
+        //public EntityService(IUnitOfWork unitOfWork, IAccountingOptionService countryRepository2)
+        //{
+        //    this.unitOfWork = unitOfWork;
+        //    this.countryRepository2 = countryRepository2;
+        //}
 
         public virtual void Create(T entity)
         {
@@ -43,7 +58,7 @@ namespace SimpleAccounting.Service.Common
         public virtual void Update(T entity)
         {
             if (entity == null) throw new ArgumentNullException("entity");
-            _repository.Edit(entity);
+            _repository.Update(entity);
             _unitOfWork.Commit();
 
         }

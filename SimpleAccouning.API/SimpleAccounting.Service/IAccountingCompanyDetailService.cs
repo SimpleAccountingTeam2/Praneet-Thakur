@@ -1,4 +1,5 @@
 ﻿using SimpleAccounting.Model;
+using SimpleAccounting.Model.DTOS;
 using SimpleAccounting.Service.Common;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,13 @@ using System.Threading.Tasks;
 
 namespace SimpleAccounting.Service
 {
-   public interface IAccountingCompanyDetailService: IEntityService<AccountingCompanyDetail>
+    public interface IAccountingCompanyDetailService
     {
-     
+ bool GetAllCustomers(AccountingCompanyDetailDtos ACOMPANY);
+        bool AddUser(AccountingCompanyDetailDtos person);
 
-        AccountingCompanyDetail GetById(int Id);
+        bool UpdateDetails(AccountingCompanyDetailDtos company);
+
+
     }
 }
